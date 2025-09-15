@@ -22,8 +22,8 @@ echo.
 
 echo [3/3] Iniciando Frontend (ebookflow-frontend)...
 cd ..\ebookflow-frontend
-set PORT=3001
-echo Iniciando em: %CD% na porta 3001
+set PORT=3003
+echo Iniciando em: %CD% na porta 3003
 start /B cmd /c "npm start >> ..\EBOOKFLOW.log 2>&1"
 if %errorlevel% neq 0 (
   echo Erro no frontend. Verifique EBOOKFLOW.log
@@ -35,8 +35,8 @@ echo.
 
 echo ========================================
 echo  🚀 EbookFlow Pro pronto!
-echo  Backend: http://localhost:3000 (Docker)
-echo  Frontend: http://localhost:3001
+echo  Backend: http://localhost:3004 (Docker)
+echo  Frontend: http://localhost:3003
 echo ========================================
 echo Logs de inicialização salvos em EBOOKFLOW.log
 echo Para parar os serviços, execute: docker-compose down (no diretório backend)
