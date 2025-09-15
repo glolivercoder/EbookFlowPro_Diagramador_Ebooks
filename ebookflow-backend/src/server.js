@@ -21,11 +21,15 @@ app.use(cors({
   credentials: true
 }));
 
+// Servir arquivos estáticos de uploads
+app.use('/uploads', express.static('uploads'));
+
 // Routes
 app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/conversion', require('./routes/conversion.routes'));
 app.use('/api/templates', require('./routes/template.routes'));
 app.use('/api/ai', require('./routes/ai.routes'));
+app.use('/api/upload', require('./routes/upload.routes'));
 
 // Health check route
 app.get('/', (req, res) => {
