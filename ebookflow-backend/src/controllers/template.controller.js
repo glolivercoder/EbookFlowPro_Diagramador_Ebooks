@@ -44,12 +44,42 @@ exports.addTemplateVersion = async (req, res) => {
 };
 
 exports.clearCache = async (req, res) => {
-  try {
-    const { templateName } = req.query;
-    TemplateService.clearCache(templateName || null);
-    res.json({ success: true, message: 'Cache limpo' });
-  } catch (error) {
-    console.error('Erro ao limpar cache:', error);
-    res.status(500).json({ error: 'Erro interno do servidor' });
-  }
-};
+   try {
+     const { templateName } = req.query;
+     TemplateService.clearCache(templateName || null);
+     res.json({ success: true, message: 'Cache limpo' });
+   } catch (error) {
+     console.error('Erro ao limpar cache:', error);
+     res.status(500).json({ error: 'Erro interno do servidor' });
+   }
+ };
+
+exports.getMarkdownTemplates = async (req, res) => {
+   try {
+     const templates = TemplateService.getMarkdownTemplates();
+     res.json({ success: true, templates });
+   } catch (error) {
+     console.error('Erro ao listar templates markdown:', error);
+     res.status(500).json({ error: 'Erro interno do servidor' });
+   }
+ };
+
+exports.getMarkdownTemplate = async (req, res) => {
+   try {
+     const { templateName } = req.params;
+
+     if (!templateName) {
+       return res.status(400).json({ error: 'Nome do template é obrigatório' });
+     }
+
+     const template = TemplateService.getMarkdownTemplate(templateName);
+     if (!template) {
+       return res.status(404).json({ error: 'Template não encontrado' });
+     }
+
+     res.json({ success: true, template });
+   } catch (error) {
+     console.error('Erro ao carregar template markdown:', error);
+     res.status(500).json({ error: 'Erro interno do servidor' });
+   }
+ };
