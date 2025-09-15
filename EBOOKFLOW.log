@@ -1,0 +1,116 @@
+
+> ebookflow-backend@1.0.0 dev
+> nodemon src/server.js
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node src/server.js`[39m
+EbookFlow Pro Backend server running on port 3000
+Erro ao conectar ao MongoDB: MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (F:\Projetos2025BKP\EbookFlowPro_Diagramador_Ebooks\ebookflow-backend\node_modules\mongoose\lib\connection.js:1165:11)
+    at NativeConnection.openUri (F:\Projetos2025BKP\EbookFlowPro_Diagramador_Ebooks\ebookflow-backend\node_modules\mongoose\lib\connection.js:1096:11) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) { 'localhost:27017' => [ServerDescription] },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  cause: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) { 'localhost:27017' => [ServerDescription] },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  }
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting child process[39m
+[32m[nodemon] starting `node src/server.js`[39m
+
+> ebookflow-frontend@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3000.
+
+> ebookflow-frontend@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3000.
+
+> ebookflow-frontend@0.1.0 start
+> react-scripts start
+
+(node:8436) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:8436) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+
+[1m[33mwarn[39m[22m - The `content` option in your Tailwind CSS configuration is missing or empty.
+[1m[33mwarn[39m[22m - Configure your content sources or your generated CSS will be missing styles.
+[1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration
+Compiled with warnings.
+
+[eslint] 
+src\components\Editor\MainEditor.tsx
+  Line 43:6:  React Hook useEffect has a missing dependency: 'setSavedContent'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\components\Editor\MainEditor.tsx
+  Line 43:6:  React Hook useEffect has a missing dependency: 'setSavedContent'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+ERROR in src/components/Editor/MainEditor.tsx:135:43
+TS2339: Property 'inline' does not exist on type 'ClassAttributes<HTMLElement> & HTMLAttributes<HTMLElement> & ExtraProps'.
+  [0m [90m 133 |[39m           [33m<[39m[33mReactMarkdown[39m
+   [90m 134 |[39m             components[33m=[39m{{
+  [31m[1m>[22m[39m[90m 135 |[39m               code({ className[33m,[39m children[33m,[39m inline[33m,[39m [33m...[39mprops }) {
+   [90m     |[39m                                           [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 136 |[39m                 [36mconst[39m match [33m=[39m [35m/language-(\w+)/[39m[33m.[39mexec(className [33m||[39m [32m''[39m)[33m;[39m
+   [90m 137 |[39m                 [36mif[39m (inline) {
+   [90m 138 |[39m                   [36mreturn[39m ([0m
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src\components\Editor\MainEditor.tsx
+  Line 43:6:  React Hook useEffect has a missing dependency: 'setSavedContent'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+[1m[33mWARNING[39m[22m in [1m[eslint] 
+src\components\Editor\MainEditor.tsx
+  Line 43:6:  React Hook useEffect has a missing dependency: 'setSavedContent'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+No issues found.

@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{book}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+% Geometry
+\geometry{
+  top=2.5cm,
+  bottom=2.5cm,
+  left=3cm,
+  right=3cm,
+  marginparwidth=2cm,
+  marginparsep=0.5cm
+}
+
+% Colors
+\definecolor{primary}{RGB}{59, 130, 246}
+\definecolor{secondary}{RGB}{99, 102, 241}
+\definecolor{accent}{RGB}{236, 254, 255}
+
+% Title formatting
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{primary}}
+{\tikz\node[circle,fill=primary,text=white,font=\Large] {\thechapter};}{20pt}{\Huge}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{secondary}}
+{\thesection}{1em}{}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\textcolor{primary}{\thepage}}
+\fancyhead[LO]{\textcolor{secondary}{\rightmark}}
+\fancyhead[RE]{\textcolor{secondary}{\leftmark}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{primary}\leaders\hrule height \headrulewidth\hfill}}
+
+% Custom boxes
+\newtcolorbox{infobox}{
+  colback=accent,
+  colframe=primary,
+  boxrule=1pt,
+  arc=3pt,
+  left=10pt,
+  right=10pt,
+  top=10pt,
+  bottom=10pt
+}
+
+% Metadata
+\title{$title$}
+\author{$author$}
+\date{$date$}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  
+  \tikz\node[rectangle,fill=primary,text=white,font=\huge\bfseries,minimum width=10cm,minimum height=2cm] {$title$};
+  
+  \vspace{2cm}
+  
+  {\LARGE\textcolor{secondary}{$author$}}
+  
+  \vspace{1cm}
+  
+  {\large\textcolor{gray}{$date$}}
+  
+  \vfill
+  
+  \tikz\draw[primary,thick] (0,0) -- (10,0);
+  
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\cleardoublepage
+
+% Content
+$body$
+
+\end{document}

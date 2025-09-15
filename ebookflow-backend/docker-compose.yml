@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=mongodb://mongo:27017/ebookflow
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=your_super_secret_jwt_key_here_change_in_production
+      - FRONTEND_URL=http://localhost:3001
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+      - redis
+    command: npm run dev
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=ebookflow
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  mongodb_data:
+  redis_data:
